@@ -13,13 +13,11 @@ return new class extends Migration
     {
         Schema::create('shipments', function (Blueprint $table) {
             $table->id();
-              $table->id();
             $table->foreignId('order_id')->constrained()->onDelete('cascade');
             $table->string('tracking_number')->nullable();
             $table->string('carrier')->nullable();
             $table->date('shipped_date')->nullable();
             $table->date('delivered_date')->nullable();
-            $table->timestamps();
             $table->timestamps();
         });
     }

@@ -18,8 +18,12 @@ return new class extends Migration
             $table->foreignId('sub_category_id')->nullable()->constrained('sub_categories')->onDelete('cascade');
             $table->foreignId('brand_id')->nullable()->constrained()->onDelete('set null');
             $table->string('name');
-            $table->text('description')->nullable();
+            $table->text('sort_desc')->nullable();
             $table->decimal('price', 10, 2);
+            $table->longtext('long_text')->nullable();
+            $table->longtext('additional_info')->nullable();
+            $table->longtext('shipping_info')->nullable();
+            $table->longtext('return_policy')->nullable();
             $table->timestamps();
         });
     }
