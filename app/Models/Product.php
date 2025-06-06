@@ -12,10 +12,11 @@ class Product extends Model
     ];
 
     public function type() { return $this->belongsTo(Type::class); }
-    public function category() { return $this->belongsTo(Category::class); }
+    public function categories() { return $this->belongsTo(Category::class); }
     public function subCategory() { return $this->belongsTo(SubCategory::class); }
     public function brand() { return $this->belongsTo(Brand::class); }
     public function variants() { return $this->hasMany(ProductVariant::class); }
     public function media() { return $this->hasMany(ProductMedia::class); }
+
 }
 
